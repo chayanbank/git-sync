@@ -28,6 +28,7 @@ jobs:
       with:
         # Such as https://github.com/wangchucheng/git-repo-sync.git
         target-url: <target-url>
+        target-branch: 'main'
         # Such as wangchucheng
         target-username: <target-username>
         # You can store token in your project's 'Setting > Secrets' and reference the name here. Such as ${{ secrets.ACCESS_TOKEN }}
