@@ -1,0 +1,20 @@
+name: build
+
+on: 
+  - push
+  - delete
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    name: Git Repo Sync
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - uses: chayanbank/git-sync@main
+      with:
+        target-url: 'https://gitlab.com/ever-medical-technologies/ever-healthcare-oma/ever-oma-react-web.git'
+        target-branch: 'main'
+        target-username: 'githubsync'
+        target-token: ${{ secrets.GITHUBSYNC }}
